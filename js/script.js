@@ -8,7 +8,7 @@ function atualizarTela() {
 function depositar(){
     let deposito = Number( document.getElementById( "inputValue" ).value );
    
-    console.log(deposito);
+    console.log("Valor digitado (deposito):",deposito,"R$");
     
     console.log(saldo);
 
@@ -28,7 +28,7 @@ function depositar(){
 
 function sacar(){
     let saque = Number( document.getElementById( "inputValue" ).value );
-    console.log(saque);
+    console.log("Valor digitado (saque):", saque ,"R$");
 
     if (saque > 0){
         //alert("Saque efetuado com sucesso!");
@@ -37,6 +37,7 @@ function sacar(){
         document.getElementById("inputValue").value = "";
         return saque;
     }
+    
     console.log(saldo);
 
     if (saque <= saldo){
