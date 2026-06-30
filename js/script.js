@@ -15,7 +15,7 @@ function depositar(){
     if (deposito >= 0){
         alert("Deposito efetuado com sucesso!");
     }else{
-        alert("O deposito não pode menor ou igual a 0");
+        alert("ERROR: O deposito não pode menor ou igual a 0");
         return deposito;
     }
 
@@ -23,26 +23,28 @@ function depositar(){
     
     atualizarTela(saldo + deposito);
 
-    document.getElementById("inputValue").value = 0;
+    document.getElementById("inputValue").value = "";
 }
 
 function sacar(){
     let saque = Number( document.getElementById( "inputValue" ).value );
-   // let saldo = Number( document.getElementById( "inputValue" ).value );
     console.log(saque);
 
-    if (saque >= 0){
+    if (saque > 0){
         //alert("Saque efetuado com sucesso!");
     }else{
-        alert("O saque não pode menor ou igual a 0");
+        alert("ERROR: O saque não pode menor ou igual a 0");
+        document.getElementById("inputValue").value = "";
         return saque;
     }
     console.log(saldo);
 
     if (saque <= saldo){
         alert("Saque efetuado com sucesso!");
+        document.getElementById("inputValue").value = "";
     }else{
         alert("O saldo é insuficiente");
+        document.getElementById("inputValue").value = "";
         return saldo;
     }
 
@@ -50,7 +52,7 @@ function sacar(){
 
     atualizarTela(saldo + saque);
 
-    document.getElementById("inputValue").value = 0;
+    document.getElementById("inputValue").value = "";
 
 
 }
