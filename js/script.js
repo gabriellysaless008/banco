@@ -51,7 +51,7 @@ function sacar(){
 
     saldo = saldo - saque;
 
-    atualizarTela(saldo + saque);
+    atualizarTela(saldo - saque);
 
     document.getElementById("inputValue").value = "";
 
